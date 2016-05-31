@@ -1,7 +1,10 @@
 class Player < ActiveRecord::Base
 
-  has_many :wins, :foreign_key => "winner_id", primary_key: "player_id", class_name: "::Match"
-  has_many :losses, :foreign_key => "loser_id", primary_key: "player_id", class_name: "::Match"
+  self.primary_key = 'player_id'
+
+  has_many :wins, :foreign_key => "winner_id", class_name: "::Match"
+  has_many :losses, :foreign_key => "loser_id", class_name: "::Match"
+  has_many :rankings, :foreign_key => "player_id", class_name: "::Ranking"
 
   def matches
     wins.union(losses)
