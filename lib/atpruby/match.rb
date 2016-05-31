@@ -5,7 +5,7 @@ class Match < ActiveRecord::Base
   has_one :winner, :foreign_key => "player_id", primary_key: "winner_id", class_name: "::Player"
   has_one :loser, :foreign_key => "player_id", primary_key: "loser_id", class_name: "::Player"
 
-  (1969..2015).each do |year|
+  (Constants::START_YEAR..Constants::END_YEAR).each do |year|
     scope "in_#{year}".intern, -> { where("extract(year from match_date)=#{year}") }
   end
 

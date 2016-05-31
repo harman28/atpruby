@@ -6,6 +6,10 @@ class Player < ActiveRecord::Base
   has_many :losses, :foreign_key => "loser_id", class_name: "::Match"
   has_many :rankings, :foreign_key => "player_id", class_name: "::Ranking"
 
+  def name
+    [self.firstname, self.lastname].join(' ')
+  end
+
   def matches
     wins.union(losses)
   end

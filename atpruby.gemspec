@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Allow easy use of the Sackmann ATP DB}
   spec.description   = spec.summary
-  spec.homepage      = "https://github.com/harman28/"
+  spec.homepage      = "https://github.com/harman28/atpruby"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
