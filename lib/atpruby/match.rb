@@ -15,4 +15,9 @@ class Match < ActiveRecord::Base
   def players
     ::Player.where(player_id:[winner_id,loser_id])
   end
+
+  def self.select_compact
+    select(:id, :tourney_id, :tourney_name, :surface, :tourney_level, :round,
+            :minutes, :winner_id, :winner_name, :loser_id, :loser_name, :score)
+  end
 end
