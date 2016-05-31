@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "pg"
+  spec.add_runtime_dependency "active_record_union"
 end
